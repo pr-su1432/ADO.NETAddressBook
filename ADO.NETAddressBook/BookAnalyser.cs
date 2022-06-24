@@ -70,6 +70,7 @@ namespace ADO.NETAddressBook
             {
                 Console.WriteLine("-------\nError:Records are not updated.\n-----");
             }
+           connect.Close();
         }
     }
 }
