@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocuSign.eSign.Model;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -45,6 +46,29 @@ namespace ADO.NETAddressBook
                 }
                 data.Close();
                 connect.Close();
+            }
+        }
+        public void UpdateDetails()
+        {
+            SqlConnection connect = new SqlConnection(DBPath);
+            try
+            {
+                using (connect)
+                {
+                    Console.WriteLine("Enter name of Person:");
+                    string name = Console.ReadLine();
+                    Console.WriteLine("Enter contact to update:");
+                    string phone = Console.ReadLine();
+                    connect.Open();
+                    string query = "update AddressBook set PHONENO =" + phone + "where FIRSTNAME='" + name + "'";
+                    SqlCommand command = new SqlCommand(query, connect);
+                    command.ExecuteNonQuery();
+                    Console.WriteLine("Records updated successfully.");
+                }
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("-------\nError:Records are not updated.\n-----");
             }
         }
     }
