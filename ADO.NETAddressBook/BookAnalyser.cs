@@ -63,13 +63,29 @@ namespace ADO.NETAddressBook
                     string query = "update AddressBook set PHONENO =" + phone + "where FIRSTNAME='" + name + "'";
                     SqlCommand command = new SqlCommand(query, connect);
                     command.ExecuteNonQuery();
-                    Console.WriteLine("Records updated successfully.");
+                    Console.WriteLine("Details updated successfully.");
                 }
             }
             catch (FormatException)
             {
                 Console.WriteLine("-------\nError:Records are not updated.\n-----");
             }
+        }
+        public void DeleteDetails()
+        {
+            SqlConnection connect = new SqlConnection(DBPath);
+            using (connect)
+            {
+                connect.Open();
+                Console.WriteLine("Enter phone of person to  delete from Details:");
+                string phone = Console.ReadLine();
+                string query = "delete from AddressBook where PHONENO='" + phone + "'";
+                SqlCommand command = new SqlCommand(query, connect);
+                command.ExecuteNonQuery();
+                Console.WriteLine("Details Deleted successfully.");
+                connect.Close();
+            }
+
         }
     }
 }

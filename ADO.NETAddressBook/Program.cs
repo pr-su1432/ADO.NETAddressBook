@@ -8,6 +8,7 @@ namespace ADO.NETAddressBook
             BookAnalyser exp = new BookAnalyser();
             exp.getDataFromAddressBook();
             exp.UpdateDetails();
+            exp.DeleteDetails();
         }
     }
 }
