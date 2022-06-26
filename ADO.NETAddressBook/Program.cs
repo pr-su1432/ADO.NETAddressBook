@@ -6,9 +6,10 @@ namespace ADO.NETAddressBook
         public static void Main(string[] args)
         {
             BookAnalyser exp = new BookAnalyser();
-            exp.getDataFromAddressBook();
-            exp.UpdateDetails();
-            exp.DeleteDetails();
+           // exp.getDataFromAddressBook();
+            //exp.UpdateDetails();
+            //exp.DeleteDetails();
+            exp.CreateNewContactDetails();
         }
     }
 }
