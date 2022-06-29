@@ -13,45 +13,6 @@ namespace ADO.NETAddressBook
     {
         public static string DBPath = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=AddressBook;";
 
-
-        /*public void CreateNewContactDetails()
-{
-SqlConnection connect = new SqlConnection(DBPath);
-using (connect)
-{
-connect.Open();
-ADO.NETAddressBook.Book model = new ADO.NETAddressBook.Book();
-Console.WriteLine("Enter First Name");
-model.FIRSTNAME = Console.ReadLine();
-Console.WriteLine("Enter Last Name");
-model.LASTNAME = Console.ReadLine();
-Console.WriteLine("Enter Address ");
-model.ADDRESSs = Console.ReadLine();
-Console.WriteLine("Enter City ");
-model.CITY = Console.ReadLine();
-Console.WriteLine("Enter State ");
-model.STATE = Console.ReadLine();
-Console.WriteLine("Enter Zip Code ");
-model.ZIP = Console.ReadLine();
-Console.WriteLine("Enter Phone ");
-model.PHONENO = Console.ReadLine();
-Console.WriteLine("Enter Email ");
-model.EMAIL = Console.ReadLine();
-SqlCommand sql = new SqlCommand("SP_AddressBook", connect);
-sql.CommandType = CommandType.StoredProcedure;
-sql.Parameters.AddWithValue("@FIRSTNAME", model.FIRSTNAME);
-sql.Parameters.AddWithValue("@LASTNAME", model.LASTNAME);
-sql.Parameters.AddWithValue("@ADDRESSs", model.ADDRESSs);
-sql.Parameters.AddWithValue("@CITY", model.CITY);
-sql.Parameters.AddWithValue("@STATE", model.STATE);
-sql.Parameters.AddWithValue("@ZIP", model.ZIP);
-sql.Parameters.AddWithValue("@PHONENO", model.PHONENO);
-sql.Parameters.AddWithValue("@EMAIL", model.EMAIL);
-sql.ExecuteNonQuery();
-Console.WriteLine("Record created successfully.");
-connect.Close();
-}
-}*/
         public void getDataFromAddressBook()
         {
             SqlConnection connect = new SqlConnection(DBPath);
